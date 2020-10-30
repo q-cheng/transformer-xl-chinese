@@ -574,7 +574,7 @@ def inference(n_token, cutoffs, ps_device):
             eval_ckpt_path = tf.train.latest_checkpoint(FLAGS.model_dir)
         else:
             eval_ckpt_path = FLAGS.eval_ckpt_path
-
+        print('eval_ckpt_path:', eval_ckpt_path)
         saver.restore(sess, eval_ckpt_path)
 
         # attention_score = tf.get_variable('transformer/layer_2/rel_attn/transpose_1:0')
